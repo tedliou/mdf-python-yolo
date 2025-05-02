@@ -1,0 +1,31 @@
+{
+    "name": "YOLO Module",
+    "version": "1.0.0",
+    "inputs": [
+        "camera"
+    ],
+    "input_params": {
+        "camera_id": 0
+    },
+    "outputs": [
+        "osc"
+    ],
+    "output_params": {
+        "osc_address": "127.0.0.1",
+        "osc_port": 5005,
+        "osc_path": "/pose"
+    },
+    "process": [
+        "resize",
+        "flip",
+        "yolo-pose"
+    ],
+    "process_params": {
+        "resize_size": [
+            640,
+            640
+        ],
+        "flip_mode": "x",
+        "yolo_model": "yolo11n-pose.pt"
+    }
+}
